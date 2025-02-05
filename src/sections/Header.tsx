@@ -1,10 +1,10 @@
 export const Header = () => {
-  return <div>
-    <nav>
-      <a href="#">Home</a>
-      <a href="#">Join Us</a>
-      <a href="#">Contact Us</a>
-      <a href="#">Sign Up</a>
+  return <div className="flex justify-center items-center relative top-3">
+    <nav className="flex gap-1 p-0.5 border border-white/15 rounded-full bg-white/10 backdrop-blur">
+      <a href="#" className="nav-item">Home</a>
+      <a href="#" className="nav-item">Projects</a>
+      <a href="#" className="nav-item">About</a>
+      <a href="#" className="nav-item">Sign Up</a>
     </nav>
   </div>;
 };

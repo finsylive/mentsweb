@@ -1,4 +1,4 @@
-// File: /Users/ayushmansingh/code/MentsV2/Mentslandingv2/src/app/page.tsx
+// File: C:\Users\Lenovo\OneDrive\Desktop\New folder (6)\mentsweb\src\app\page.tsx
 import * as entry from '../../../src/app/page.js'
 import type { ResolvingMetadata, ResolvingViewport } from 'next/dist/lib/metadata/types/metadata-interface.js'
 

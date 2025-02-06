@@ -42,5 +42,34 @@ const portfolioProjects = [
 ];
 
 export const ProjectsSection = () => {
-  return <div>Projects Section</div>;
+  return (
+    <div>
+      <div className="container">
+        <p className="uppercase font-semibold tracking-widest bg-gradient-to-r from-emerald-300 to-sky-400 text-center">Real-World Results</p>
+        <h2 className="font-serif text-white/60 mt-4">Featured Projects</h2>
+        <p>See how I transformed concepts into engaging digital experiences.</p>
+      </div>
+        <div className="flex flex-col mt-10">
+      {portfolioProjects.map((project) => (
+        <div key={project.title} className="bg-gray-800 rounded-3xl relative z-0 overflow-hidden after:z-10 after:content[''] after:absolute after:inset-0 after:outline-2 after:-outline-offset-2 after:rounded-3xl after:outline-white/20 ">
+          <div>
+            <span>{project.company}</span>
+            <span>{project.year}</span>
+          </div>
+          <h3>{project.title}</h3>
+          <hr />
+          <ul>
+            {project.results.map((result, index) => (
+              <li key={index}>{result.title}</li>
+            ))}
+          </ul>
+          <a href={project.link} target="_blank" rel="noopener noreferrer">
+            <button>View Live Site</button>
+          </a>
+        </div>
+      ))}
+    </div>
+    </div>
+  );
 };
+

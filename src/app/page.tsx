@@ -9,11 +9,11 @@ import { Projects } from "@/sections/Projects";
 export default function Home() {
   return (
     <div>
-      <Header />
-      < HeroSection />
-      <Projects />
-      <AnimatedTestimonialsDemo/>  
-      <LogoMarquee/>   
+      <Header/>
+      <HeroSection/> 
+      <Projects/>
+      <LogoMarquee/>
+      <AnimatedTestimonialsDemo/>    
       <Footer/>
     </div>
   );

@@ -3,14 +3,18 @@ import { Header } from "@/sections/Header";
 import {AnimatedTestimonialsDemo} from "@/sections/Testimonials"
 import {LogoMarquee} from "@/sections/Tape"
 import { Footer } from "@/sections/Footer";
+import { HeroSection } from "@/sections/Hero";
+import { Projects } from "@/sections/Projects";
 
 export default function Home() {
   return (
     <div>
-      <Header /> 
+      <Header />
+      < HeroSection />
+      <Projects />
       <AnimatedTestimonialsDemo/>  
-       <LogoMarquee/>   
-       <Footer/>
+      <LogoMarquee/>   
+      <Footer/>
     </div>
   );
 }

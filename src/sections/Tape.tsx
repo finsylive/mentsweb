@@ -54,10 +54,10 @@ export function LogoMarquee() {
       {/* Header - Responsive text sizes */}
       <div className="relative z-20 mb-8 md:mb-16 flex flex-col items-center px-4">
         <span className="text-indigo-400 text-xs md:text-base font-medium mb-2 md:mb-4 tracking-widest uppercase">
-          Our Partners & Collaborators
+          Our Community members are from
         </span>
         <h2 className="text-2xl md:text-5xl font-bold text-white text-center bg-clip-text text-transparent bg-gradient-to-r from-white to-white/80">
-          Global Community Network
+          Community Network
         </h2>
         <div className="mt-4 md:mt-6 w-16 md:w-24 h-1 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-full" />
       </div>

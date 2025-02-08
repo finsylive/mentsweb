@@ -24,8 +24,8 @@ export function Footer() {
             <div className="flex space-x-6 pt-4">
               {[
                 { name: 'twitter', url: 'https://twitter.com/yourprofile', icon: Twitter },
-                { name: 'instagram', url: 'https://instagram.com/yourprofile', icon: Instagram },
-                { name: 'linkedin', url: 'https://linkedin.com/yourprofile', icon: Linkedin }
+                { name: 'instagram', url: 'https://instagram.com/ment_app', icon: Instagram },
+                { name: 'linkedin', url: 'https://linkedin.com/company/ments2024', icon: Linkedin }
               ].map((social) => (
                 <a 
                   key={social.name}

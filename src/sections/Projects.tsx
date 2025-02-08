@@ -40,7 +40,7 @@ const portfolioProjects = [
       { title: "Adheres to strict WHO Guidelines for accuracy" },
       { title: "Reduces dependency on costly professional reports" },
     ],
-    link: "#",
+    link: "https://mental-health-test.tiiny.site",
     image: neuroKind,
   },
 ];

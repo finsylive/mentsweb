@@ -40,7 +40,7 @@ const portfolioProjects = [
       { title: "Adheres to strict WHO Guidelines for accuracy" },
       { title: "Reduces dependency on costly professional reports" },
     ],
-    link: "https://youtu.be/Z7I5uSRHMHg",
+    link: "#",
     image: neuroKind,
   },
 ];

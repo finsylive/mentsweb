@@ -3,32 +3,32 @@ import React, { useState, useEffect } from 'react';
 
 const logos = [
   { 
-    name: "Microsoft", 
+    name: "IIT Bombay", 
     src: "https://th.bing.com/th/id/OIP.baaPUaWyzc95KKjKt-DClwHaHN?rs=1&pid=ImgDetMain",
     color: "from-blue-500/20 to-blue-600/20"
   },
   { 
-    name: "Goldman Sachs", 
+    name: "IIT Madras", 
     src: "https://th.bing.com/th/id/OIP.RwrVEqGQ1GgKpT6UjjZQ1AHaHa?rs=1&pid=ImgDetMain",
     color: "from-blue-400/20 to-indigo-500/20"
   },
   { 
-    name: "Goa University", 
+    name: "IIT Goa", 
     src: "https://th.bing.com/th/id/OIP.8X5qKVILdYvR_u_PBUCryQHaHo?rs=1&pid=ImgDetMain",
     color: "from-purple-500/20 to-purple-600/20"
   },
   { 
-    name: "IISc", 
+    name: "IIT KGP", 
     src: "https://th.bing.com/th/id/OIP.OLNhwq1r-Rq6njDFrfNmVAHaIS?w=768&h=860&rs=1&pid=ImgDetMain",
     color: "from-indigo-500/20 to-indigo-600/20"
   },
   { 
-    name: "IISER Pune", 
+    name: "SRCC", 
     src: "https://www.univariety.com/uploads/university/images/logo/56052dd0_logo.jpg",
     color: "from-sky-500/20 to-sky-600/20"
   },
   { 
-    name: "Manipal University", 
+    name: "Hindu CollegeS", 
     src: "https://www.pngkit.com/png/full/247-2476940_hindu-college-delhi-university-logo.png",
     color: "from-violet-500/20 to-violet-600/20"
   }

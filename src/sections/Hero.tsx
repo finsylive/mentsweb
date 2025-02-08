@@ -38,7 +38,7 @@ export const HeroSection = () => {
         <SparkleIcon className="size-14 text-emerald-300/20"/>
       </HeroOrbit>
     </div>
-    <div className="container">
+    <div className="container relative z-10">
       <div className="flex flex-col items-center">
         <Image src={memojiImage}
         className="size-[100px]"
@@ -55,16 +55,18 @@ export const HeroSection = () => {
 
         <p className="mt-4 text-center text-white/80 md:text-lg" >Join the community, Collaborate with students accross colleges, Access mentorship sessions, and bring your ideas to life!</p>
       </div>
-    </div>
-    <div className="flex flex-col md:flex-row justify-center items-center mt-8 gap-4">
-      <button className="inline-flex items-center gap-2 border border-white/15 px-6 h-12 rounded-xl">
-        <span className="font-semibold"> View Projects</span>
-        < ArrowDown className="size-4"/>
-      </button>
-      <button className="inline-flex items-center gap-2 border border-white bg-white text-black px-6 h-12 rounded-xl">
-        <span>👋</span>
-        <span className="font-semibold"> Join Us</span>
-      </button>
+      <div className="flex flex-col md:flex-row justify-center items-center mt-8 gap-4">
+        <button className="inline-flex items-center gap-2 border border-white/15 px-6 h-12 rounded-xl">
+          <span className="font-semibold"> View Projects</span>
+          < ArrowDown className="size-4"/>
+        </button>
+        <a href="https://forms.gle/8XiTzjHPgaDq6MDp7" target="_blank" rel="noopener noreferrer">
+          <button className="inline-flex items-center gap-2 border border-white bg-white text-black px-6 h-12 rounded-xl">
+            <span>👋</span>
+            <span className="font-semibold"> Join Us</span>
+          </button>
+        </a>
+      </div>
     </div>
   </div>);
 };

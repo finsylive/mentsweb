@@ -1,5 +1,6 @@
 "use client";
 import React, { useState, useEffect } from 'react';
+import grainImage from "@/assets/images/grain.jpg";
 
 const logos = [
   { 
@@ -20,7 +21,7 @@ const logos = [
   { 
     name: "IIT KGP", 
     src: "https://th.bing.com/th/id/OIP.OLNhwq1r-Rq6njDFrfNmVAHaIS?w=768&h=860&rs=1&pid=ImgDetMain",
-    color: "from-indigo-500/20 to-indigo-600/20"
+    color: "from-emerald-500/20 to-sky-600/20"
   },
   { 
     name: "SRCC", 
@@ -48,25 +49,29 @@ export function LogoMarquee() {
   }, []);
 
   return (
-    <div className="relative w-full bg-gradient-to-b from-slate-900 to-slate-950 py-8 md:py-24 overflow-hidden">
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(49,46,129,0.15),transparent)]" />
+    <div className="relative w-full bg-gray-800 py-8 md:py-24 overflow-hidden">
+      {/* Grain overlay */}
+      <div 
+        className="absolute inset-0 opacity-5"
+        style={{ backgroundImage: `url(${grainImage.src})` }}
+      />
       
-      {/* Header - Responsive text sizes */}
-      <div className="relative z-20 mb-8 md:mb-16 flex flex-col items-center px-4">
-        <span className="text-indigo-400 text-xs md:text-base font-medium mb-2 md:mb-4 tracking-widest uppercase">
+      {/* Header section */}
+      <div className="relative z-15 mb-8 md:mb-16 flex flex-col items-center px-4">
+        <span className="uppercase font-semibold tracking-widest bg-gradient-to-r from-emerald-300 to-sky-400 text-center bg-clip-text text-transparent">
           Our Community members are from
         </span>
-        <h2 className="text-2xl md:text-5xl font-bold text-white text-center bg-clip-text text-transparent bg-gradient-to-r from-white to-white/80">
+        <h2 className="font-serif text-3xl md:text-5xl text-center mt-6 text-white">
           Community Network
         </h2>
-        <div className="mt-4 md:mt-6 w-16 md:w-24 h-1 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-full" />
+        <div className="mt-4 md:mt-6 w-16 md:w-24 h-1 bg-gradient-to-r from-emerald-300 to-sky-400 rounded-full" />
       </div>
 
       {/* Marquee Container */}
       <div className="relative z-10 overflow-hidden">
-        {/* Gradient Overlays - Adjusted for mobile */}
-        <div className="absolute left-0 top-0 w-12 md:w-20 h-full bg-gradient-to-r from-slate-900 to-transparent z-10" />
-        <div className="absolute right-0 top-0 w-12 md:w-20 h-full bg-gradient-to-l from-slate-900 to-transparent z-10" />
+        {/* Gradient Overlays */}
+        <div className="absolute left-0 top-0 w-12 md:w-20 h-full bg-gradient-to-r from-gray-800 to-transparent z-10" />
+        <div className="absolute right-0 top-0 w-12 md:w-20 h-full bg-gradient-to-l from-gray-800 to-transparent z-10" />
         
         <div 
           className="flex overflow-x-hidden touch-pan-y"
@@ -93,17 +98,23 @@ export function LogoMarquee() {
                   <div className="
                     w-24 h-24 md:w-44 md:h-44 
                     relative group 
-                    rounded-xl md:rounded-2xl 
+                    rounded-3xl 
                     overflow-hidden 
                     transition-all duration-500 
                     hover:scale-105 
                     active:scale-95
                     transform-gpu
+                    after:z-10 after:content-[''] 
+                    after:absolute after:inset-0 
+                    after:outline-2 after:outline 
+                    after:-outline-offset-2 
+                    after:rounded-3xl 
+                    after:outline-white/20
                   ">
                     {/* Background */}
                     <div className={`
                       absolute inset-0 
-                      bg-gradient-to-br ${logo.color} 
+                      bg-gray-800
                       backdrop-blur-xl 
                       border border-white/10 
                       group-hover:border-white/20 

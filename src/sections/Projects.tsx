@@ -7,18 +7,18 @@ import Image from "next/image";
 import grainImage from "@/assets/images/grain.jpg";
 
 const portfolioProjects = [
-  {
-    company: "FoundersGang",
-    year: "2024",
-    title: "A place for founders, to build connect and thrive",
-    results: [
-      { title: "A place to showcase your startup" },
-      { title: "Get weekly new updates" },
-      { title: "Tool and resources tailored to needs to entrepreneurs" },
-    ],
-    link: "https://www.foundersgang.com",
-    image: founderGang,
-  },
+  // {
+  //   company: "FoundersGang",
+  //   year: "2024",
+  //   title: "A place for founders, to build connect and thrive",
+  //   results: [
+  //     { title: "A place to showcase your startup" },
+  //     { title: "Get weekly new updates" },
+  //     { title: "Tool and resources tailored to needs to entrepreneurs" },
+  //   ],
+  //   link: "https://www.foundersgang.com",
+  //   image: founderGang,
+  // },
   {
     company: "Dattva Yaan",
     year: "2025",

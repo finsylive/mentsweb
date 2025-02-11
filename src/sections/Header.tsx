@@ -29,7 +29,7 @@ export const Header = () => {
             <Link href="/" className="nav-item">About</Link>
           </>
         )}
-        <Link href="/Mentor" className="nav-item">Mentors</Link>
+{/*         <Link href="/Mentor" className="nav-item">Mentors</Link> */}
         <a href="https://forms.gle/8XiTzjHPgaDq6MDp7" className="nav-item">Sign Up</a>
       </nav>
     </div>

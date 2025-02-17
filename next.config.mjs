@@ -18,6 +18,10 @@ const nextConfig = {
         protocol: "https",
         hostname: "media.licdn.com", // Add LinkedIn images
       },
+       {
+        protocol: "https",
+        hostname: "https://i.imgur.com", // Add LinkedIn images
+      },
     ],
   },
   webpack(config) {

@@ -20,7 +20,7 @@ const nextConfig = {
       },
        {
         protocol: "https",
-        hostname: "https://i.imgur.com", // Add LinkedIn images
+        hostname: "i.imgur.com", // Add LinkedIn images
       },
     ],
   },

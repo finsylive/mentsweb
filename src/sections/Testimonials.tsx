@@ -11,10 +11,10 @@ export function AnimatedTestimonialsDemo() {
     },
     {
       quote:
-        "Personally, I feel the idea of building projects like this is going to be very helpful for us.",
-      name: "Shriyash Jagtap",
+        "Krishna's Ments platform has been really good for my startup. I was impressed by how he connected me with relevant experts and peers, sparking valuable insights. Highly recommend Ments for any founder seeking meaningful connections!",
+      name: "Rudransh",
       designation: "Software developer",
-      src: "https://media.licdn.com/dms/image/v2/D4D03AQE1lG5QDloDdg/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1722370892561?e=1744243200&v=beta&t=SRboi9d0CzAyVQmnR9ptbXag5CJldwFwJGnzPupQja0",
+      src: "https://i.imgur.com/J8DIKdt.jpeg",
     },
     // {
     //   quote:

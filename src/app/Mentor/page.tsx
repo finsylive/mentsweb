@@ -255,6 +255,7 @@ const MentorSection = () => {
                             <Users className="w-4 h-4 mr-1" />
                             {event.spots} spots available
                           </div>
+                          // hi
                         )}
                       </div>
                     ))}

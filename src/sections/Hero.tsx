@@ -5,8 +5,11 @@ import grainImage from "@/assets/images/grain.jpg";
 import StarIcon from "@/assets/icons/star.svg";
 import { HeroOrbit } from "@/components/HeroOrbit";
 import SparkleIcon from "@/assets/icons/sparkle.svg";
+import { useState } from "react";
+import { SupabaseAuth } from "@/components/SupabaseAuth";
 
 export const HeroSection = () => {
+  const [showAuth, setShowAuth] = useState(false);
   return (
   <div className="py-40 md:py-56 lg:py-72 relative z-0 overflow-x-clip">
     <div className="absolute inset-0 [mask-image: linear-gradient(to_bottom, transparent, black_10%, black_70%,transparent)]">
@@ -60,13 +63,14 @@ export const HeroSection = () => {
           <span className="font-semibold"> View Projects</span>
           < ArrowDown className="size-4"/>
         </button>
-        <a href="https://forms.gle/8XiTzjHPgaDq6MDp7" target="_blank" rel="noopener noreferrer">
-          <button className="inline-flex items-center gap-2 border border-white bg-white text-black px-6 h-12 rounded-xl">
-            <span>👋</span>
-            <span className="font-semibold"> Join Us</span>
-          </button>
-        </a>
+        <button
+          className="inline-flex items-center gap-2 border border-green-500 px-6 h-12 rounded-xl bg-green-500 text-white font-semibold"
+          onClick={() => setShowAuth(true)}
+        >
+          Join Us
+        </button>
       </div>
+      {showAuth && <SupabaseAuth onClose={() => setShowAuth(false)} />}
     </div>
-  </div>);
+  </div>)
 };

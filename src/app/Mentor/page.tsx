@@ -1,7 +1,15 @@
 import React from 'react';
-import { Calendar, Users, Lightbulb, ArrowRight, Star, MessageCircle } from 'lucide-react';
+import { Calendar, Users, Lightbulb, ArrowRight, Star, MessageCircle, GraduationCap } from 'lucide-react';
+import { StaticImageData } from 'next/image';
+import KranthiImg from '@/assets/images/Kranthi.jpg'; 
 
 type EventType = 'webinar' | 'feedback' | 'one-on-one' | 'workshop';
+
+interface Education {
+  degree: string;
+  institution: string;
+  year: string;
+}
 
 interface MentorEvent {
   id: string;
@@ -11,110 +19,145 @@ interface MentorEvent {
   description: string;
   spots?: number;
 }
+
 interface Mentor {
   id: string;
   name: string;
   role: string;
   company: string;
-  image: string;
+  image: string | StaticImageData;
   expertise: string[];
+  education: Education[];
   events: MentorEvent[];
 }
+
 const mentors: Mentor[] = [
   {
     id: '1',
     name: 'Kranthi Kumar C',
     role: 'Business Head',
     company: 'Turno',
-    image: '/mentors/',
+    image: KranthiImg,
     expertise: ['UI/UX', 'Design Systems', 'Product Strategy'],
-    events: [
+    education: [
       {
-        id: 'e1',
-        type: 'webinar',
-        date: '2024-02-20T18:00:00Z',
-        title: 'Building Scalable Design Systems',
-        description: 'Learn the fundamental principles of creating design systems that scale.',
-        spots: 100
+        degree: 'BTech in Metalurgical Engineering',
+        institution: 'Indian Institute of Technology, Madras',
+        year: ''
       },
+    ],
+    events: [
       {
         id: 'e2',
         type: 'feedback',
-        date: '2024-02-22T15:00:00Z',
+        date: 'to be decided',
         title: 'Portfolio Review Session',
-        description: 'Get personalized feedback on your design portfolio.',
+        description: 'Get personalized feedback on your Project.',
         spots: 5
       }
     ]
   },
   {
     id: '2',
-    name: 'Alex Rivera',
-    role: 'Engineering Manager',
-    company: 'Stripe',
-    image: '/mentors/alex.jpg',
-    expertise: ['System Architecture', 'Team Leadership', 'Frontend Development'],
+    name: 'Smita Meshram',
+    role: 'Senior Data Scientist',
+    company: 'Oracle',
+    image: '/smita.jpg',
+    expertise: ['Data Science', 'Machine Learning', 'Deep Learning'],
+    education: [
+      {
+        degree: 'BTech + MTech in Metallurgical Engineering',
+        institution: 'Indian Institute of Technology, Madras',
+        year: '2020'
+      }
+    ],
     events: [
       {
         id: 'e3',
-        type: 'workshop',
+        type: 'webinar',
         date: '2024-02-25T17:00:00Z',
-        title: 'Modern Frontend Architecture',
-        description: 'Deep dive into building scalable frontend applications.',
+        title: 'What it takes to be a Data Scientist',
+        description: 'Deep dive into the world of Data Science.',
         spots: 50
       }
     ]
   },
   {
     id: '3',
-    name: 'Emily Zhang',
-    role: 'Data Scientist',
-    company: 'Google',
-    image: '/mentors/emily.jpg',
-    expertise: ['Machine Learning', 'Data Analysis', 'AI Ethics'],
+    name: 'Jayanth V',
+    role: 'Chartared Accountant',
+    company: '',
+    image: 'src/assets/images/jayanth.jpg',
+    expertise: ['Finance Modelling', 'Financial Analyst'],
+    education: [
+      {
+        degree: 'Chartered Accountant',
+        institution: 'ICAI',
+        year: ''
+      },
+    ],
     events: [
       {
         id: 'e4',
         type: 'webinar',
         date: '2024-03-01T19:00:00Z',
-        title: 'Introduction to Machine Learning',
-        description: 'Learn the basics of machine learning and its applications.',
-        spots: 200
+        title: 'Finance Modelling for a startup',
+        description: 'Learn the basics of finance modelling for a startup.',
+        spots: 50
       }
     ]
   },
   {
     id: '4',
-    name: 'John Doe',
-    role: 'Software Engineer',
-    company: 'Microsoft',
-    image: '/mentors/john.jpg',
-    expertise: ['Backend Development', 'Cloud Computing', 'DevOps'],
+    name: 'Ponnappa K C',
+    role: 'Co-founder and COO @Swift Money',
+    company:'Swift Money',
+    image: '/mentors/ponnappa.jpg',
+    expertise: ['Bussiness Consulting', 'Management information System', 'Risk Management'],
+    education: [
+      {
+        degree: 'MBA, Finance',
+        institution: 'T A Pai Management Institute, Manipal',
+        year: '2002'
+      }
+    ],
     events: [
       {
-        id: 'e5',
-        type: 'workshop',
-        date: '2024-03-05T16:00:00Z',
-        title: 'Cloud Computing with Azure',
-        description: 'Explore the fundamentals of cloud computing using Microsoft Azure.',
-        spots: 75
+        id: 'e2',
+        type: 'feedback',
+        date: 'to be decided',
+        title: 'Portfolio Review Session',
+        description: 'Get personalized feedback on your Project.',
+        spots: 7
       }
     ]
   },
   {
     id: '5',
-    name: 'Jane Smith',
-    role: 'Product Manager',
-    company: 'Amazon',
-    image: '/mentors/jane.jpg',
-    expertise: ['Product Management', 'Agile Methodologies', 'User Research'],
+    name: 'Akshya Beniwal',
+    role: 'Psycholgoist',
+    company: '',
+    image: 'src/assets/images/akshya.jpg',
+    expertise: ['Psychological', '', 'User Research'],
+    education: [
+      {
+        degree: 'MA',
+        institution: 'University of Delhi',
+        year: '2024'
+      },
+      {
+        degree: 'Bsc in physical sciences',
+        institution: 'Hansraj College, Delhi University',
+        year: '2021'
+      }
+    ],
     events: [
       {
         id: 'e6',
         type: 'one-on-one',
         date: '2024-03-10T14:00:00Z',
-        title: 'Career Coaching Session',
-        description: 'Get personalized advice on advancing your career in product management.',
+        title: 'Technological application in clinical psychology',
+        description: 'Get personalized advice on your project.',
         spots: 10
       }
     ]
@@ -151,7 +194,6 @@ const MentorSection = () => {
             </div>
           </div>
         </div>
-
         {/* Mentors Grid */}
         <div className="overflow-x-auto pb-6">
           <div className="flex gap-8" style={{ minWidth: `${mentors.length * 400}px` }}>
@@ -167,6 +209,21 @@ const MentorSection = () => {
                     <div>
                       <h3 className="font-bold text-xl">{mentor.name}</h3>
                       <p className="text-gray-400 text-sm">{mentor.role} at {mentor.company}</p>
+                    </div>
+                  </div>
+                  {/* Education Section */}
+                  <div className="mb-6">
+                    <div className="flex items-center gap-2 mb-3">
+                      <GraduationCap className="w-5 h-5 text-purple-400" />
+                      <h4 className="font-semibold text-gray-300">Education</h4>
+                    </div>
+                    <div className="space-y-2">
+                      {mentor.education.map((edu, index) => (
+                        <div key={index} className="bg-gray-700/20 rounded-lg p-3">
+                          <p className="font-medium text-sm">{edu.degree}</p>
+                          <p className="text-sm text-gray-400">{edu.institution}, {edu.year}</p>
+                        </div>
+                      ))}
                     </div>
                   </div>
                   <div className="flex flex-wrap gap-2 mb-6">
@@ -208,7 +265,6 @@ const MentorSection = () => {
             ))}
           </div>
         </div>
-
         {/* CTA Card */}
         <div className="bg-gradient-to-r from-emerald-900/50 to-sky-900/50 rounded-2xl p-8 text-center backdrop-blur mt-16">
           <Star className="w-12 h-12 text-yellow-400 mx-auto mb-4" />

@@ -45,7 +45,7 @@ export function Footer() {
               <div className="space-y-4">
                 <div className="flex items-center space-x-3">
                   <Mail className="h-5 w-5 text-emerald-300" />
-                  <span>outreach@finsy.in</span>
+                  <span>support@ments.app</span>
                 </div>
                 <div className="flex items-center space-x-3">
                   <Phone className="h-5 w-5 text-sky-400" />

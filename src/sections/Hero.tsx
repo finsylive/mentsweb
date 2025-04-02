@@ -44,23 +44,25 @@ export const HeroSection = () => {
     <div className="container relative z-10">
       <div className="flex flex-col items-center">
         <Image src={memojiImage}
-        className="size-[100px]"
-        alt="Person peeking at the laptop" />
+        className="size-[200px] object-cover object-top"
+        alt="Person peeking at the laptop"
+        style={{ height: '180px' }}
+        />
         <div className="bg-gray-950 border border-gray-800 px-4 py-1.5 inline-flex items-center gap-4 rounded-lg">
           <div className="bg-green-500 size-2.5 rounded-full  relative">
             <div className="bg-green-500 size-2.5 rounded-full  animate-ping"></div>
           </div>
-          <div className="text-sm font-medium">4 Projects are already on progress</div>
+          <div className="text-sm font-medium">Beta testing on progress</div>
         </div>
       </div>
       <div className="max-w-lg mx-auto">
-        <h1 className="font-serif text-3xl text-center mt-8 tracking-wide md:text-5xl">Collaborate. Create. Conquer.</h1>
+        <h1 className="font-serif text-3xl text-center mt-8 tracking-wide md:text-5xl">Hustle Begins Here.</h1>
 
-        <p className="mt-4 text-center text-white/80 md:text-lg" >Join the community, Collaborate with students accross colleges, Access mentorship sessions, and bring your ideas to life!</p>
+        <p className="mt-4 text-center text-white/80 md:text-lg" >Ments is an app that connects innovators with collaborators, mentors, and Investors—empowering ideas to create impactful ventures.</p>
       </div>
       <div className="flex flex-col md:flex-row justify-center items-center mt-8 gap-4">
         <button className="inline-flex items-center gap-2 border border-white/15 px-6 h-12 rounded-xl">
-          <span className="font-semibold"> View Projects</span>
+          <span className="font-semibold"> App Overview</span>
           < ArrowDown className="size-4"/>
         </button>
         <button

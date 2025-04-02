@@ -58,31 +58,6 @@ const mentors: Mentor[] = [
   },
   {
     id: '2',
-    name: 'Smita Meshram',
-    role: 'Senior Data Scientist',
-    company: 'Oracle',
-    image: '/images/smita.jpeg',
-    expertise: ['Data Science', 'Machine Learning', 'Deep Learning'],
-    education: [
-      {
-        degree: 'BTech + MTech in Metallurgical Engineering',
-        institution: 'Indian Institute of Technology, Madras',
-        year: '2020'
-      }
-    ],
-    events: [
-      {
-        id: 'e3',
-        type: 'webinar',
-        date: '2024-02-25T17:00:00Z',
-        title: 'What it takes to be a Data Scientist',
-        description: 'Deep dive into the world of Data Science.',
-        spots: 50
-      }
-    ]
-  },
-  {
-    id: '3',
     name: 'Jayanth V',
     role: 'Chartared Accountant',
     company: '',
@@ -107,7 +82,7 @@ const mentors: Mentor[] = [
     ]
   },
   {
-    id: '4',
+    id: '3',
     name: 'Ponnappa K C',
     role: 'Co-founder and COO @Swift Money',
     company:'Swift Money',
@@ -128,6 +103,31 @@ const mentors: Mentor[] = [
         title: 'Portfolio Review Session',
         description: 'Get personalized feedback on your Project.',
         spots: 7
+      }
+    ]
+  },
+  {
+    id: '4',
+    name: 'Smita Meshram',
+    role: 'Senior Data Scientist',
+    company: 'Oracle',
+    image: '/images/smita.jpeg',
+    expertise: ['Data Science', 'Machine Learning', 'Deep Learning'],
+    education: [
+      {
+        degree: 'BTech + MTech in Metallurgical Engineering',
+        institution: 'Indian Institute of Technology, Madras',
+        year: '2020'
+      }
+    ],
+    events: [
+      {
+        id: 'e3',
+        type: 'webinar',
+        date: '2024-02-25T17:00:00Z',
+        title: 'What it takes to be a Data Scientist',
+        description: 'Deep dive into the world of Data Science.',
+        spots: 50
       }
     ]
   },
@@ -255,7 +255,6 @@ const MentorSection = () => {
                             <Users className="w-4 h-4 mr-1" />
                             {event.spots} spots available
                           </div>
-                          // hi
                         )}
                       </div>
                     ))}
@@ -281,5 +280,6 @@ const MentorSection = () => {
     </section>
   );
 };
+
 
 export default MentorSection;

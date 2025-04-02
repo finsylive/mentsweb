@@ -271,10 +271,12 @@ const MentorSection = () => {
           <p className="text-gray-300 mb-6 max-w-2xl mx-auto">
             Join our mentorship program and get personalized guidance from industry experts who've been where you want to go.
           </p>
-          <button className="inline-flex items-center px-6 py-3 bg-emerald-500 hover:bg-emerald-600 text-white font-semibold rounded-xl transition-colors">
-            Get Mentorship
-            <ArrowRight className="ml-2 w-5 h-5" />
-          </button>
+          <a href="https://forms.gle/8XiTzjHPgaDq6MDp7" target="_blank" rel="noopener noreferrer">
+            <button className="inline-flex items-center px-6 py-3 bg-emerald-500 hover:bg-emerald-600 text-white font-semibold rounded-xl transition-colors">
+              Get Mentorship
+              <ArrowRight className="ml-2 w-5 h-5" />
+            </button>
+          </a>
         </div>
       </div>
     </section>

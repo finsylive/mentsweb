@@ -65,14 +65,12 @@ export const HeroSection = () => {
           <span className="font-semibold"> App Overview</span>
           < ArrowDown className="size-4"/>
         </button>
-        <button
-          className="inline-flex items-center gap-2 border border-green-500 px-6 h-12 rounded-xl bg-green-500 text-white font-semibold"
-          onClick={() => setShowAuth(true)}
-        >
-          Join Us
-        </button>
+        <a href="https://forms.gle/8XiTzjHPgaDq6MDp7" target="_blank" rel="noopener noreferrer">
+          <button className="inline-flex items-center gap-2 border border-green-500 px-6 h-12 rounded-xl bg-green-500 text-white font-semibold">
+            Join Us
+          </button>
+        </a>
       </div>
-      {showAuth && <SupabaseAuth onClose={() => setShowAuth(false)} />}
     </div>
   </div>)
 };

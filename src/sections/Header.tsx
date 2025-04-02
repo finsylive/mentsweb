@@ -19,13 +19,11 @@ export const Header = () => {
         {pathname === "/" ? (
           <>
             <a href="#hero" onClick={(e) => scrollToSection(e, "hero")} className="nav-item">Home</a>
-            <a href="#projects" onClick={(e) => scrollToSection(e, "projects")} className="nav-item">Projects</a>
             <a href="#footer" onClick={(e) => scrollToSection(e, "footer")} className="nav-item">About</a>
           </>
         ) : (
           <>
             <Link href="/" className="nav-item">Home</Link>
-            <Link href="/" className="nav-item">Projects</Link>
             <Link href="/" className="nav-item">About</Link>
           </>
         )}

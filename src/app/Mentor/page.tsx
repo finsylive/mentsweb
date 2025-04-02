@@ -1,7 +1,6 @@
 import React from 'react';
 import { Calendar, Users, Lightbulb, ArrowRight, Star, MessageCircle, GraduationCap } from 'lucide-react';
 import { StaticImageData } from 'next/image';
-import KranthiImg from '@/assets/images/Kranthi.jpg'; 
 
 type EventType = 'webinar' | 'feedback' | 'one-on-one' | 'workshop';
 
@@ -37,7 +36,7 @@ const mentors: Mentor[] = [
     name: 'Kranthi Kumar C',
     role: 'Business Head',
     company: 'Turno',
-    image: KranthiImg,
+    image: '/images/Kranthi.jpg',
     expertise: ['UI/UX', 'Design Systems', 'Product Strategy'],
     education: [
       {
@@ -59,35 +58,10 @@ const mentors: Mentor[] = [
   },
   {
     id: '2',
-    name: 'Smita Meshram',
-    role: 'Senior Data Scientist',
-    company: 'Oracle',
-    image: '/smita.jpg',
-    expertise: ['Data Science', 'Machine Learning', 'Deep Learning'],
-    education: [
-      {
-        degree: 'BTech + MTech in Metallurgical Engineering',
-        institution: 'Indian Institute of Technology, Madras',
-        year: '2020'
-      }
-    ],
-    events: [
-      {
-        id: 'e3',
-        type: 'webinar',
-        date: '2024-02-25T17:00:00Z',
-        title: 'What it takes to be a Data Scientist',
-        description: 'Deep dive into the world of Data Science.',
-        spots: 50
-      }
-    ]
-  },
-  {
-    id: '3',
     name: 'Jayanth V',
     role: 'Chartared Accountant',
     company: '',
-    image: 'src/assets/images/jayanth.jpg',
+    image: '/images/jayanth.jpg', // Update to correct public path
     expertise: ['Finance Modelling', 'Financial Analyst'],
     education: [
       {
@@ -108,11 +82,11 @@ const mentors: Mentor[] = [
     ]
   },
   {
-    id: '4',
+    id: '3',
     name: 'Ponnappa K C',
     role: 'Co-founder and COO @Swift Money',
     company:'Swift Money',
-    image: '/mentors/ponnappa.jpg',
+    image: '/images/ponnappa.jpg',
     expertise: ['Bussiness Consulting', 'Management information System', 'Risk Management'],
     education: [
       {
@@ -133,11 +107,36 @@ const mentors: Mentor[] = [
     ]
   },
   {
+    id: '4',
+    name: 'Smita Meshram',
+    role: 'Senior Data Scientist',
+    company: 'Oracle',
+    image: '/images/smita.jpeg',
+    expertise: ['Data Science', 'Machine Learning', 'Deep Learning'],
+    education: [
+      {
+        degree: 'BTech + MTech in Metallurgical Engineering',
+        institution: 'Indian Institute of Technology, Madras',
+        year: '2020'
+      }
+    ],
+    events: [
+      {
+        id: 'e3',
+        type: 'webinar',
+        date: '2024-02-25T17:00:00Z',
+        title: 'What it takes to be a Data Scientist',
+        description: 'Deep dive into the world of Data Science.',
+        spots: 50
+      }
+    ]
+  },
+  {
     id: '5',
     name: 'Akshya Beniwal',
     role: 'Psycholgoist',
     company: '',
-    image: 'src/assets/images/akshya.jpg',
+    image: '/images/akshya.jpg',
     expertise: ['Psychological', '', 'User Research'],
     education: [
       {
@@ -202,7 +201,7 @@ const MentorSection = () => {
                 <div className="p-6">
                   <div className="flex items-center gap-4 mb-6">
                     <img
-                      src={mentor.image}
+                      src={typeof mentor.image === 'string' ? mentor.image : mentor.image.src}
                       alt={mentor.name}
                       className="w-16 h-16 rounded-full object-cover"
                     />
@@ -281,5 +280,6 @@ const MentorSection = () => {
     </section>
   );
 };
+
 
 export default MentorSection;

@@ -106,12 +106,12 @@ export const Projects = () => {
                     ))}
                   </ul>
                 </div>
-                <div className="flex mt-6 flex-1 items-start justify-center overflow-hidden max-h-[45vh] lg:max-h-none lg:items-center">
-                  <div className="w-[70%] lg:w-full flex">
+                <div className="flex mt-6 flex-1 items-start justify-center overflow-hidden max-h-[100vh] lg:max-h-none lg:items-center">
+                  <div className="w-[90%] lg:w-full flex">
                     <Image
                       src={project.image}
                       alt={project.title}
-                      className="w-full h-auto scale-110 object-top object-cover lg:scale-100 lg:object-contain"
+                      className="w-full h-auto scale-100 object-top object-cover lg:scale-100 lg:object-contain"
                       priority={true}
                       quality={90}
                     />

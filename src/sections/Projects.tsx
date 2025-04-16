@@ -9,48 +9,36 @@ import grainImage from "@/assets/images/grain.jpg";
 
 const portfolioProjects = [
   {
-    company: "Ments",
-    year: "2025",
     title: "Swipe through Startups/Project Profiles",
     results: [
-      { title: "Detailed project profiles - Startups, Research Projects, and more" },
-      { title: "Track your favorite projects and connect with them" },
+      { title: "Track your favorite startups, research project and connect with them" },
       { title: "See  details like open positions, progress made and more" },
     ],
     link: "#",
     image: mentsLeaderboardWork,
   },
   {
-    company: "Ments",
-    year: "2025",
     title: "Leaderboard",
     results: [
-      { title: "Find our what ideas people like the most" },
+      { title: "Find our what ideas people like the most based on filter" },
       { title: "Win exciting rewards, and funding opportunities." },
-      { title: "Filter through top projects based on your interest" },
     ],
     link: "#",
     image: mentsLeaderboard,
   },
   {
-    company: "Ments",
-    year: "2025",
     title: "Requirements",
     results: [
       { title: "Find requirements that match your skills" },
-      { title: "Connect with Startups and Projects which require your skills" },
       { title: "Robust search feature to find Projects, People, and work" },
     ],
     link: "#",
     image: mentsSearch,
   },
   {
-    company: "Ments",
-    year: "2025",
     title: "Environments",
     results: [
-      { title: "Topic based discussions" },
-      { title: "Personalized content at your fingertips" },
+      { title: "Topic based discussions with personlised content" },
       { title: "Exchange of ideas and insights between students and experts" },
     ],
     link: "#",
@@ -68,18 +56,15 @@ export const Projects = () => {
           </p>
         </div>
         <h2 className="font-serif text-3xl md:text-5xl text-center mt-6">
-          Featured Screens
+          App Showcase
         </h2>
-        <p className="text-center md:text-lg text-white/60 mt-4 max-w-md mx-auto">
-          Explore the mobile experience of Ments with these interactive screens.
-        </p>
         
         {/* Adding a wrapper with relative positioning and height */}
         <div className="mt-10 md:mt-20 relative" style={{ height: `${portfolioProjects.length * 100}vh` }}>
           {portfolioProjects.map((project, index) => (
             <div
               key={project.title}
-              className="bg-gray-800 rounded-3xl relative z-0 overflow-hidden after:z-10 after:content-[''] after:absolute after:inset-0 after:outline-2 after:outline after:-outline-offset-2 after:rounded-3xl after:outline-white/20 px-8 pt-8 md:pt-12 md:px-10 lg:pt-16 lg:px-20 after:pointer-events-none sticky bottom-0 h-screen flex flex-col lg:block"
+              className="bg-gray-800 rounded-3xl relative z-0 overflow-hidden after:z-10 after:content-[''] after:absolute after:inset-0 after:outline-2 after:outline after:-outline-offset-2 after:rounded-3xl after:outline-white/20 px-8 pt-8 md:pt-12 md:px-10 lg:pt-16 lg:px-20 after:pointer-events-none sticky bottom-0 h-90vh] flex flex-col lg:block"
               style={{ 
                 zIndex: portfolioProjects.length - index, // Higher index = lower z-index
               }}
@@ -90,11 +75,6 @@ export const Projects = () => {
               ></div>
               <div className="lg:grid lg:grid-cols-2 lg:gap-16 h-full flex flex-col">
                 <div className="lg:pb-16">
-                  <div className="bg-gradient-to-r from-emerald-300 to-sky-400 inline-flex gap-2 font-bold uppercase tracking-widest text-sm text-transparent bg-clip-text">
-                    <span>{project.company}</span>
-                    <span>&bull;</span>
-                    <span>{project.year}</span>
-                  </div>
                   <h3 className="font-serif text-2xl mt-2 md:mt-5 md:text-4xl">{project.title}</h3>
                   <hr className="border-2 border-white/5 mt-4 md:mt-5" />
                   <ul className="flex flex-col gap-4 mt-4 md:mt-5">

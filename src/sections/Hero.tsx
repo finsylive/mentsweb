@@ -67,7 +67,7 @@ export const HeroSection = () => {
         </button>
         <a href="https://forms.gle/8XiTzjHPgaDq6MDp7" target="_blank" rel="noopener noreferrer">
           <button className="inline-flex items-center gap-2 border border-green-500 px-6 h-12 rounded-xl bg-green-500 text-white font-semibold">
-            Join Waitlist
+            Join Us
           </button>
         </a>
       </div>

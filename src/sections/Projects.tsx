@@ -94,15 +94,16 @@ export const Projects = () => {  // Changed from ProjectsSection to Projects
                     </button>
                   </a>
                 </div>
-                <div>
-                  <Image
-                    src={project.image}
-                    alt={project.title}
-                    className="mt-8 -mb-4 md:-md-0 lg:mt-0
-                    lg:absolute lg:h-full"
-                    priority={true}
-                    quality={90}
-                  />
+                <div className="flex mt-6 flex-1 items-start justify-center overflow-hidden max-h-[45vh] lg:max-h-none lg:items-center">
+                  <div className="w-[70%] lg:w-full flex">
+                    <Image
+                      src={project.image}
+                      alt={project.title}
+                      className="w-full h-auto scale-110 object-top object-cover lg:scale-100 lg:object-contain"
+                      priority={true}
+                      quality={90}
+                    />
+                  </div>
                 </div>
               </div>
             </div>

@@ -20,28 +20,40 @@ const portfolioProjects = [
   //   image: founderGang,
   // },
   {
-    company: "Dattva Yaan",
-    year: "2025",
-    title: "Digital Dominance Platform for Manufacturers",
+    title: "Swipe through Startups/Project Profiles",
     results: [
-      { title: "Helped manufacturers establish digital presence" },
-      { title: "Increased brand value through tailored solutions" },
-      { title: "Streamlined website development and digital marketing" },
+      { title: "Track your favorite startups, research project and connect with them" },
+      { title: "See  details like open positions, progress made and more" },
     ],
     link: "https://dvaann.web.app/",
     image: dattvaYaan,
   },
   {
-    company: "neuro kind",
-    year: "2025",
-    title: "AI-Powered Mental Health Diagnosis Platform",
+    title: "Leaderboard",
     results: [
-      { title: "Provides affordable mental health diagnosis in India" },
-      { title: "Adheres to strict WHO Guidelines for accuracy" },
-      { title: "Reduces dependency on costly professional reports" },
+      { title: "Find our what ideas people like the most based on filter" },
+      { title: "Win exciting rewards, and funding opportunities." },
     ],
-    link: "https://mental-health-test.tiiny.site",
-    image: neuroKind,
+    link: "#",
+    image: mentsLeaderboard,
+  },
+  {
+    title: "Requirements",
+    results: [
+      { title: "Find requirements that match your skills" },
+      { title: "Robust search feature to find Projects, People, and work" },
+    ],
+    link: "#",
+    image: mentsSearch,
+  },
+  {
+    title: "Environments",
+    results: [
+      { title: "Topic based discussions with personlised content" },
+      { title: "Exchange of ideas and insights between students and experts" },
+    ],
+    link: "#",
+    image: mentsHome,
   },
 ];
 
@@ -55,16 +67,18 @@ export const Projects = () => {  // Changed from ProjectsSection to Projects
           </p>
         </div>
         <h2 className="font-serif text-3xl md:text-5xl text-center mt-6">
-          Featured Projects
+          App Showcase
         </h2>
-        <p className="text-center md:text-lg text-white/60 mt-4 max-w-md mx-auto">
-          See some Projects that are growing in our community
-        </p>
-        <div className="mt-10  md:mt-20 flex flex-col gap-20">
-          {portfolioProjects.map((project) => (
+        
+        {/* Adding a wrapper with relative positioning and height */}
+        <div className="mt-10 md:mt-20 relative" style={{ height: `${portfolioProjects.length * 100}vh` }}>
+          {portfolioProjects.map((project, index) => (
             <div
               key={project.title}
-              className="bg-gray-800 rounded-3xl relative z-0 overflow-hidden after:z-10 after:content-[''] after:absolute after:inset-0 after:outline-2 after:outline after:-outline-offset-2 after:rounded-3xl after:outline-white/20 px-8 pt-8 md:pt-12 md:px-10 lg:pt-16 lg:px-20 after:pointer-events-none sticky top-16"
+              className="bg-gray-800 rounded-3xl relative z-0 overflow-hidden after:z-10 after:content-[''] after:absolute after:inset-0 after:outline-2 after:outline after:-outline-offset-2 after:rounded-3xl after:outline-white/20 px-8 pt-8 md:pt-12 md:px-10 lg:pt-16 lg:px-20 after:pointer-events-none sticky bottom-0 h-90vh] flex flex-col lg:block"
+              style={{ 
+                zIndex: portfolioProjects.length - index, // Higher index = lower z-index
+              }}
             >
               <div
                 className="absolute inset-0 -z-10 opacity-5"
@@ -72,11 +86,6 @@ export const Projects = () => {  // Changed from ProjectsSection to Projects
               ></div>
               <div className="lg:grid lg:grid-cols-2 lg:gap-16">
                 <div className="lg:pb-16">
-                  <div className="bg-gradient-to-r from-emerald-300 to-sky-400 inline-flex gap-2 font-bold uppercase tracking-widest text-sm text-transparent bg-clip-text">
-                    <span>{project.company}</span>
-                    <span>&bull;</span>
-                    <span>{project.year}</span>
-                  </div>
                   <h3 className="font-serif text-2xl mt-2 md:mt-5 md:text-4xl">{project.title}</h3>
                   <hr className="border-2 border-white/5 mt-4 md:mt-5" />
                   <ul className="flex flex-col gap-4 mt-4 md:mt-5">

@@ -1,0 +1,732 @@
+import 'package:flutter/material.dart';
+import 'package:flutter/gestures.dart';
+import 'package:flutter/services.dart';
+import 'package:ments/core/utils/color_varients.dart';
+import 'package:url_launcher/url_launcher.dart';
+
+class LegalDocumentPage extends StatelessWidget {
+  final String title;
+  final Widget content;
+
+  const LegalDocumentPage({
+    Key? key,
+    required this.title,
+    required this.content,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    final fcolor = ColorVariants();
+
+    return Scaffold(
+      backgroundColor: fcolor.bgBlack,
+      appBar: AppBar(
+        backgroundColor: fcolor.bgBlack,
+        elevation: 0,
+        title: Text(
+          title,
+          style: TextStyle(
+            color: fcolor.whiteHead1,
+            fontWeight: FontWeight.bold,
+          ),
+        ),
+        iconTheme: IconThemeData(color: fcolor.whiteHead1),
+        actions: [
+          IconButton(
+            icon: Icon(Icons.share),
+            onPressed: () {
+              // Share functionality
+            },
+          ),
+        ],
+      ),
+      body: SafeArea(
+        child: content,
+      ),
+    );
+  }
+}
+
+class TermsAndConditionsContent extends StatelessWidget {
+  const TermsAndConditionsContent({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    final fcolor = ColorVariants();
+
+    return SingleChildScrollView(
+      padding: const EdgeInsets.all(16.0),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Center(
+            child: Text(
+              "Ments – Legal Documentation",
+              style: TextStyle(
+                color: fcolor.whiteHead1,
+                fontSize: 20,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+          ),
+          SizedBox(height: 8),
+          Center(
+            child: Text(
+              "Last updated: May 8, 2025",
+              style: TextStyle(
+                color: fcolor.greyLabel,
+                fontSize: 14,
+                fontStyle: FontStyle.italic,
+              ),
+            ),
+          ),
+          SizedBox(height: 24),
+          Text(
+            "Welcome to Ments (\"the App\"), a mentor‑centric social network, in India (\"we\", \"us\", or \"our\"). Below you will find the core legal documents required for publishing and operating the App on Google Play:",
+            style: TextStyle(
+              color: fcolor.whiteHead1,
+              fontSize: 16,
+            ),
+          ),
+          SizedBox(height: 16),
+          _buildNumberedItem(context, "Terms & Conditions of Use",
+              "(End‑User License Agreement)"),
+          _buildNumberedItem(context, "Privacy Policy",
+              "(including Data Safety disclosure for Google Play)"),
+          _buildNumberedItem(context, "Community Guidelines", ""),
+          _buildNumberedItem(
+              context, "Cookie & Tracking Technologies Notice", ""),
+          Divider(color: fcolor.greyLabel.withOpacity(0.3), height: 32),
+
+          // Terms & Conditions Section
+          _buildSectionHeader(context, "1  Terms & Conditions of Use"),
+          _buildSubsection(
+            context,
+            "1.1  Acceptance of the Terms",
+            "By downloading, installing, or using the App you agree to be bound by these Terms & Conditions (\"Terms\"). If you do not agree, you must not use the App.",
+          ),
+          _buildSubsection(
+            context,
+            "1.2  Eligibility",
+            "You must be at least 13 years old (or the minimum digital‑consent age in your jurisdiction) to create an account. If you are a minor, you confirm that your parent or legal guardian has reviewed and accepted these Terms on your behalf.",
+          ),
+          _buildSubsection(
+            context,
+            "1.3  Account Registration & Security",
+            "• Provide accurate information and keep it updated.\n• Keep your credentials confidential. You are responsible for all activity under your account.\n• We may suspend or terminate accounts that violate these Terms or applicable law.",
+          ),
+          _buildSubsection(
+            context,
+            "1.4  User‑Generated Content & Conduct",
+            "• You retain ownership of content you post but grant us a worldwide, non‑exclusive, royalty‑free licence to host, display, reproduce, distribute, and adapt it solely for operating, promoting, and improving the App.\n• Do not post content that is illegal, hateful, harassing, infringing, or otherwise prohibited in the Community Guidelines.\n• Mentorship interactions are peer‑to‑peer opinions; they are not professional, financial, medical, or legal advice. You remain solely responsible for decisions made based on such content.",
+          ),
+          _buildSubsection(
+            context,
+            "1.5  Payments & Subscriptions (if applicable)",
+            "• Premium features are billed through Google Play using the payment method on file. Prices include applicable taxes unless stated otherwise.\n• Subscriptions renew automatically unless cancelled at least 24 hours before the end of the current period. Google Play's refund policies apply.",
+          ),
+          _buildSubsection(
+            context,
+            "1.6  Intellectual‑Property Rights",
+            "All proprietary content of the App (code, design, trademarks, and brand elements) is owned by or licensed to us and is protected by Indian and international IP laws. No rights are granted except as expressly stated.",
+          ),
+          _buildSubsection(
+            context,
+            "1.7  Third‑Party Services",
+            "The App integrates third‑party services (e.g. Supabase, AWS, Google OAuth). Your use of those services is governed by their respective terms.",
+          ),
+          _buildSubsection(
+            context,
+            "1.8  Disclaimer of Warranties",
+            "The App is provided \"as‑is\" and \"as‑available.\" We make no warranties, express or implied, regarding reliability, availability, or fitness for a particular purpose.",
+          ),
+          _buildSubsection(
+            context,
+            "1.9  Limitation of Liability",
+            "To the fullest extent permitted by law, our total liability for any claims arising out of or relating to the App will not exceed the greater of INR 5,000 or the amount you paid us in the past 12 months.",
+          ),
+          _buildSubsection(
+            context,
+            "1.10  Indemnification",
+            "You agree to indemnify and hold harmless Ments Labs, its directors, employees, and partners from any claims, damages, or expenses arising out of your breach of these Terms or misuse of the App.",
+          ),
+          _buildSubsection(
+            context,
+            "1.11  Termination",
+            "We may suspend or terminate your account at any time for violation of these Terms or applicable law. You may delete your account at any time in‑app or by emailing Support@ments.app.",
+          ),
+          _buildSubsection(
+            context,
+            "1.12  Governing Law & Dispute Resolution",
+            "These Terms are governed by the laws of India. Any disputes shall be subject to the exclusive jurisdiction of the courts in Mumbai, Maharashtra, India. Consumers in the EU/UK retain mandatory protections under local law.",
+          ),
+          _buildSubsection(
+            context,
+            "1.13  Changes to the Terms",
+            "We may update these Terms from time to time. Material changes will be notified in‑app or via email at least 7 days before they take effect.",
+          ),
+          _buildSubsection(
+            context,
+            "1.14  Contact",
+            "Questions about these Terms? Email us at Support@ments.app.",
+            includeEmailLinks: true,
+          ),
+          Divider(color: fcolor.greyLabel.withOpacity(0.3), height: 32),
+
+          // Privacy Policy Section
+          _buildSectionHeader(context, "2  Privacy Policy"),
+          _buildSubsection(
+            context,
+            "2.1  Scope & Purpose",
+            "This Privacy Policy explains what personal data we collect, how we use it, and your choices. It applies to all users of the App and ments.app.",
+          ),
+          _buildSubsection(
+            context,
+            "2.2  Data We Collect",
+            "",
+          ),
+          _buildDataTable(context),
+          _buildSubsection(
+            context,
+            "2.3  How We Use Data",
+            "• Operate and maintain the App\n• Personalise your feed and mentor matches\n• Communicate with you (service messages & marketing with consent)\n• Enforce our Terms & policies\n• Comply with legal obligations",
+          ),
+          _buildSubsection(
+            context,
+            "2.4  Legal Bases (GDPR)",
+            "We rely on contractual necessity, legitimate interests, consent, and legal obligation as appropriate.",
+          ),
+          _buildSubsection(
+            context,
+            "2.5  Device Permissions",
+            "• Camera: We request camera access to allow you to take photos for your profile picture, project logos, and media uploads. This permission is only used when you explicitly choose to take a photo within the app.\n• Storage: We request storage access to allow you to select existing photos from your device for your profile picture, project logos, and media uploads.",
+          ),
+          _buildSubsection(
+            context,
+            "2.6  Sharing & Disclosure",
+            "We never sell your personal data. We share it only with:\n\n1. Service providers (cloud hosting, analytics, payment processors) under NDA\n2. Legal authorities when required by law\n3. Other users but only information you choose to make public (e.g., posts, profile)",
+          ),
+          _buildSubsection(
+            context,
+            "2.7  International Transfers",
+            "Data may be processed outside your country, including in the US, EU, and India. We use appropriate safeguards such as Standard Contractual Clauses.",
+          ),
+          _buildSubsection(
+            context,
+            "2.8  Data Retention",
+            "We keep data as long as your account is active or as needed for the purposes listed. You may request deletion (\"right to erasure\") at any time.",
+          ),
+          _buildSubsection(
+            context,
+            "2.9  Your Rights",
+            "Depending on your jurisdiction you may have rights to access, correct, delete, restrict, or port your data, and to object to processing or withdraw consent. Exercise rights by emailing Support@ments.app.",
+            includeEmailLinks: true,
+          ),
+          _buildSubsection(
+            context,
+            "2.10  Security",
+            "We use encryption in transit (TLS 1.3), at‑rest encryption for sensitive fields, role‑based access control, and routine security audits. No system is 100% secure; please report vulnerabilities to Support@ments.app.",
+            includeEmailLinks: true,
+          ),
+          _buildSubsection(
+            context,
+            "2.11  Children's Privacy",
+            "The App is not directed to children under 13. If we learn we have collected personal data from a child without parental consent, we will delete it.",
+          ),
+          _buildSubsection(
+            context,
+            "2.12  Changes to This Policy",
+            "If we make material changes, we will notify you at least 7 days before they take effect.",
+          ),
+          _buildSubsection(
+            context,
+            "2.13  Contact",
+            "Privacy questions? Email Support@ments.app or write to: Data Protection Officer, Ments Labs Pvt. Ltd., 91springboard, Andheri East, Mumbai 400069, India.",
+            includeEmailLinks: true,
+          ),
+          _buildSubsectionNested(
+            context,
+            "Google Play Data Safety Summary",
+            "• Personal & sensitive information collected: Yes (account data, user content, device IDs)\n• Device permissions: Camera (for taking photos), Storage (for accessing photos)\n• Encrypted in transit: Yes\n• Data deletion request mechanism: Yes (in-app & email)\n• Shared with third parties: Yes, for app functionality & analytics only",
+          ),
+          Divider(color: fcolor.greyLabel.withOpacity(0.3), height: 32),
+
+          // Community Guidelines Section
+          _buildSectionHeader(context, "3  Community Guidelines"),
+          SizedBox(height: 8),
+          Text(
+            "A brief code of conduct that complements the Terms:",
+            style: TextStyle(
+              color: fcolor.whiteHead1,
+              fontSize: 16,
+            ),
+          ),
+          SizedBox(height: 16),
+          _buildPointItem(context, "Be respectful.",
+              "Harassment, hate speech, or discrimination is forbidden."),
+          _buildPointItem(context, "No illegal content.", ""),
+          _buildPointItem(context, "No spam or self‑promotion",
+              "outside designated areas."),
+          _buildPointItem(context, "Protect privacy.",
+              "Share only what you own or have permission to share."),
+          _buildPointItem(context, "Report violations",
+              "in‑app. Repeated breaches may lead to suspension."),
+          Divider(color: fcolor.greyLabel.withOpacity(0.3), height: 32),
+
+          // Cookie Notice Section
+          _buildSectionHeader(
+              context, "4  Cookie & Tracking Technologies Notice"),
+          SizedBox(height: 8),
+          Text(
+            "We and our partners use local storage and similar technologies to:",
+            style: TextStyle(
+              color: fcolor.whiteHead1,
+              fontSize: 16,
+            ),
+          ),
+          SizedBox(height: 16),
+          _buildBulletItem(context, "Keep you signed in"),
+          _buildBulletItem(context, "Remember preferences"),
+          _buildBulletItem(context, "Measure engagement & fix bugs"),
+          SizedBox(height: 16),
+          Text(
+            "You can clear or block cookies in your browser settings, but some features may not work properly.",
+            style: TextStyle(
+              color: fcolor.whiteHead1,
+              fontSize: 16,
+            ),
+          ),
+          Divider(color: fcolor.greyLabel.withOpacity(0.3), height: 32),
+
+          // Acknowledgement Section
+          _buildSectionHeader(context, "Acknowledgement"),
+          SizedBox(height: 8),
+          Text(
+            "By using Ments you acknowledge you have read and understood all of the above documents.",
+            style: TextStyle(
+              color: fcolor.whiteHead1,
+              fontSize: 16,
+            ),
+          ),
+          SizedBox(height: 40),
+        ],
+      ),
+    );
+  }
+
+  Widget _buildNumberedItem(
+      BuildContext context, String title, String subtitle) {
+    final fcolor = ColorVariants();
+
+    return Padding(
+      padding: const EdgeInsets.only(bottom: 8.0),
+      child: Row(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(
+            "• ",
+            style: TextStyle(
+              color: fcolor.neonGreen,
+              fontSize: 16,
+              fontWeight: FontWeight.bold,
+            ),
+          ),
+          Expanded(
+            child: RichText(
+              text: TextSpan(
+                children: [
+                  TextSpan(
+                    text: title,
+                    style: TextStyle(
+                      color: fcolor.whiteHead1,
+                      fontSize: 16,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                  if (subtitle.isNotEmpty)
+                    TextSpan(
+                      text: " $subtitle",
+                      style: TextStyle(
+                        color: fcolor.greyLabel,
+                        fontSize: 14,
+                      ),
+                    ),
+                ],
+              ),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+
+  Widget _buildSectionHeader(BuildContext context, String title) {
+    final fcolor = ColorVariants();
+
+    return Padding(
+      padding: const EdgeInsets.only(bottom: 16.0),
+      child: Text(
+        title,
+        style: TextStyle(
+          color: fcolor.neonGreen,
+          fontSize: 20,
+          fontWeight: FontWeight.bold,
+        ),
+      ),
+    );
+  }
+
+  Widget _buildSubsection(BuildContext context, String title, String content,
+      {bool includeEmailLinks = false}) {
+    final fcolor = ColorVariants();
+
+    return Padding(
+      padding: const EdgeInsets.only(bottom: 24.0),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(
+            title,
+            style: TextStyle(
+              color: fcolor.whiteHead1,
+              fontSize: 18,
+              fontWeight: FontWeight.bold,
+            ),
+          ),
+          SizedBox(height: 8),
+          if (!includeEmailLinks)
+            Text(
+              content,
+              style: TextStyle(
+                color: fcolor.whiteHead1,
+                fontSize: 16,
+              ),
+            )
+          else
+            _buildRichTextWithEmailLinks(context, content),
+        ],
+      ),
+    );
+  }
+
+  Widget _buildSubsectionNested(
+      BuildContext context, String title, String content) {
+    final fcolor = ColorVariants();
+
+    return Padding(
+      padding: const EdgeInsets.only(bottom: 24.0, left: 16.0),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(
+            title,
+            style: TextStyle(
+              color: fcolor.whiteHead1,
+              fontSize: 16,
+              fontWeight: FontWeight.bold,
+            ),
+          ),
+          SizedBox(height: 8),
+          Text(
+            content,
+            style: TextStyle(
+              color: fcolor.whiteHead1,
+              fontSize: 15,
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+
+  Widget _buildDataTable(BuildContext context) {
+    final fcolor = ColorVariants();
+
+    return Container(
+      margin: EdgeInsets.only(bottom: 24.0),
+      decoration: BoxDecoration(
+        border: Border.all(color: fcolor.greyLabel.withOpacity(0.3)),
+        borderRadius: BorderRadius.circular(8),
+      ),
+      clipBehavior: Clip.antiAlias,
+      child: SingleChildScrollView(
+        scrollDirection: Axis.horizontal,
+        child: DataTable(
+          columnSpacing: 24,
+          headingRowColor:
+              MaterialStateProperty.all(fcolor.blueBg.withOpacity(0.5)),
+          dataRowColor: MaterialStateProperty.all(Colors.transparent),
+          border: TableBorder(
+            horizontalInside:
+                BorderSide(color: fcolor.greyLabel.withOpacity(0.3)),
+          ),
+          columns: [
+            DataColumn(
+              label: Text(
+                "Category",
+                style: TextStyle(
+                  color: fcolor.neonGreen,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+            ),
+            DataColumn(
+              label: Text(
+                "Examples",
+                style: TextStyle(
+                  color: fcolor.neonGreen,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+            ),
+            DataColumn(
+              label: Text(
+                "Purpose",
+                style: TextStyle(
+                  color: fcolor.neonGreen,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+            ),
+          ],
+          rows: [
+            _buildDataRow(
+              "Account Data",
+              "name, email, avatar, age range, location (city & country)",
+              "create & manage your account",
+            ),
+            _buildDataRow(
+              "Profile Content",
+              "bio, mentorship tags, posts, messages",
+              "provide social features",
+            ),
+            _buildDataRow(
+              "Usage Data",
+              "log files, device ID, in‑app actions, crash reports",
+              "analytics, security, improvement",
+            ),
+            _buildDataRow(
+              "Device Info",
+              "OS, model, language, timezone, IP address",
+              "optimise performance, fraud prevention",
+            ),
+            _buildDataRow(
+              "Payment Data",
+              "transaction IDs, purchase history (handled by Google Play)",
+              "deliver premium services",
+            ),
+            _buildDataRow(
+              "Sensitive Data",
+              "none by default; you may optionally disclose demographic details in your profile",
+              "show relevant content",
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+
+  DataRow _buildDataRow(String category, String examples, String purpose) {
+    final fcolor = ColorVariants();
+
+    return DataRow(
+      cells: [
+        DataCell(
+          Text(
+            category,
+            style: TextStyle(
+              color: fcolor.whiteHead1,
+              fontWeight: FontWeight.bold,
+            ),
+          ),
+        ),
+        DataCell(
+          Container(
+            constraints: BoxConstraints(maxWidth: 200),
+            child: Text(
+              examples,
+              style: TextStyle(
+                color: fcolor.whiteHead1,
+              ),
+            ),
+          ),
+        ),
+        DataCell(
+          Text(
+            purpose,
+            style: TextStyle(
+              color: fcolor.whiteHead1,
+            ),
+          ),
+        ),
+      ],
+    );
+  }
+
+  Widget _buildPointItem(BuildContext context, String title, String content) {
+    final fcolor = ColorVariants();
+
+    return Padding(
+      padding: const EdgeInsets.only(bottom: 12.0),
+      child: Row(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(
+            "• ",
+            style: TextStyle(
+              color: fcolor.neonGreen,
+              fontSize: 16,
+              fontWeight: FontWeight.bold,
+            ),
+          ),
+          Expanded(
+            child: RichText(
+              text: TextSpan(
+                children: [
+                  TextSpan(
+                    text: "$title ",
+                    style: TextStyle(
+                      color: fcolor.whiteHead1,
+                      fontSize: 16,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                  TextSpan(
+                    text: content,
+                    style: TextStyle(
+                      color: fcolor.whiteHead1,
+                      fontSize: 16,
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+
+  Widget _buildBulletItem(BuildContext context, String content) {
+    final fcolor = ColorVariants();
+
+    return Padding(
+      padding: const EdgeInsets.only(bottom: 8.0),
+      child: Row(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(
+            "• ",
+            style: TextStyle(
+              color: fcolor.neonGreen,
+              fontSize: 16,
+            ),
+          ),
+          Expanded(
+            child: Text(
+              content,
+              style: TextStyle(
+                color: fcolor.whiteHead1,
+                fontSize: 16,
+              ),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+
+  Widget _buildRichTextWithEmailLinks(BuildContext context, String text) {
+    final fcolor = ColorVariants();
+    final emailRegExp =
+        RegExp(r'\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z|a-z]{2,}\b');
+    final List<InlineSpan> spans = [];
+
+    int lastIndex = 0;
+    for (final match in emailRegExp.allMatches(text)) {
+      if (match.start > lastIndex) {
+        spans.add(
+          TextSpan(
+            text: text.substring(lastIndex, match.start),
+            style: TextStyle(
+              color: fcolor.whiteHead1,
+              fontSize: 16,
+            ),
+          ),
+        );
+      }
+
+      final email = text.substring(match.start, match.end);
+      spans.add(
+        TextSpan(
+          text: email,
+          style: TextStyle(
+            color: fcolor.neonGreen,
+            fontSize: 16,
+            decoration: TextDecoration.underline,
+          ),
+          recognizer: TapGestureRecognizer()
+            ..onTap = () async {
+              final Uri emailUri = Uri(
+                scheme: 'mailto',
+                path: email,
+              );
+              if (await canLaunchUrl(emailUri)) {
+                await launchUrl(emailUri);
+              }
+            },
+        ),
+      );
+
+      lastIndex = match.end;
+    }
+
+    if (lastIndex < text.length) {
+      spans.add(
+        TextSpan(
+          text: text.substring(lastIndex),
+          style: TextStyle(
+            color: fcolor.whiteHead1,
+            fontSize: 16,
+          ),
+        ),
+      );
+    }
+
+    return RichText(
+      text: TextSpan(
+        children: spans,
+      ),
+    );
+  }
+}
+
+class PrivacyPolicyContent extends StatelessWidget {
+  const PrivacyPolicyContent({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    // Implementation similar to TermsAndConditionsContent but focused on privacy policy
+    return TermsAndConditionsContent();
+  }
+}
+
+class CommunityGuidelinesContent extends StatelessWidget {
+  const CommunityGuidelinesContent({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    // Implementation similar to TermsAndConditionsContent but focused on community guidelines
+    return TermsAndConditionsContent();
+  }
+}
+
+class CookieNoticeContent extends StatelessWidget {
+  const CookieNoticeContent({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    // Implementation similar to TermsAndConditionsContent but focused on cookie notice
+    return TermsAndConditionsContent();
+  }
+}

@@ -17,8 +17,9 @@ export default function LegalDocument() {
       const sections = document.querySelectorAll('section[id]');
       let currentSection = "";
       
-      sections.forEach(section => {
-        const sectionTop = section.offsetTop - 100;
+      sections.forEach((section: Element) => {
+        const rect = section.getBoundingClientRect();
+        const sectionTop = rect.top + window.scrollY - 100;
         if (window.scrollY >= sectionTop) {
           currentSection = section.getAttribute('id') || "";
         }
